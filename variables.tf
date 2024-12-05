@@ -1,5 +1,7 @@
-variable "pet_name_length" {
-  type        = number
-  description = "Number of words in pet name"
-  default     = 2
+variable "oidc_project_list" {
+  description = "The a list of OIDC projects and AWS IAM permissions"
+  type = list(object({
+    project = string
+    actions = list(string),
+  }))
 }
